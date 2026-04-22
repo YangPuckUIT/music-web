@@ -1,0 +1,563 @@
+/* effect */ 
+html {
+    scroll-behavior: smooth;
+}
+
+/* navbar */
+.navbar ul li a:hover {
+    color: #bb00ff;
+}
+/* nút get started */
+.btn:hover{
+    background-color: #0e8d4d;
+    color: #000000;
+}
+/* 3 option giá */
+.price-card:hover {
+    background-color: rgb(103, 12, 168, 0.29);
+    color: #a1a1a1;
+}
+/* email, name, message */
+.contact-form button:hover {
+    background: rgba(29, 20, 153, 0.5);
+    border-radius: 10px;
+    color: #BEBABA;
+}
+/* nút submit */
+.contact-form input:hover,
+.contact-form textarea:hover {
+    background: rgba(66,3,111,0.5);
+    border: 0px solid #ffffff;
+}
+
+
+                           
+                           /* HERO */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #010C2B 0%, #000000 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+/* khóa ko cho user kéo ảnh, hay link */
+img {
+    -webkit-user-drag: none;
+}
+a {
+    -webkit-user-drag: none;
+}
+
+.ellipse1 {
+    background-color: #5118A7;
+    height: 286.9px;
+    width: 818.86px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    top: -250px;
+    left: -128px;
+    transform: rotate(3.13deg);
+    z-index: -1;
+}
+
+.ellipse2 {
+    background-color: #5118A7;
+    height: 383px;
+    width: 357px;
+    border-radius: 50%;
+
+    filter: blur(100px); 
+
+    position: absolute;
+    top: 540px;
+    left: -220px;
+    transform: rotate(3.13deg);
+    z-index: -1;
+}
+
+.ellipse3 {
+    background-color: #BD20CB;
+    height: 534px;
+    width: 573px;
+    border-radius: 50%;
+
+    filter: blur(100px); 
+
+    position: absolute;
+    top: 158px;
+    right: -135px;
+    transform: rotate(3.13deg);
+    z-index: -1;
+}
+
+.img1 {              /* Ano band */
+    width: 230px;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 226px;
+    right: -90px;
+}
+
+.img2 {             /* Guitar, Loneliness and Blue Planet */
+    width: 230px;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 395px;
+    right: 135px;
+}
+
+.img3 {             /* never forget */
+    width: 230px;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 145px;
+    right: 135px;
+}
+
+.img4 {             /* if i could be a constellation */
+    width: 230px;
+    transform: rotate(20deg);
+    position: absolute;
+    top: 477px;
+    right: -90px;
+}
+
+
+/*  bên trái: ảnh logo + logo (hibike! music) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.logo img {
+    width: 72px;
+    height: 64px;
+}
+
+/* xóa gạch dưới hibike music (vì ảnh và tên logo đó là link) */
+.logo {
+    text-decoration: none; /* bỏ gạch chân */
+    color: inherit;        /* giữ màu theo thiết kế */
+}
+
+/* bên phải: about, pricing, support, login */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 80px;
+}
+
+/* hiệu ứng di chuột vào */
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 20px;
+}
+
+/* thêm gạch cho phần tử cuối (Login) */
+.navbar ul li:last-child a {
+    border-left: 1px solid rgb(255, 255, 255);
+    padding-left: 50px;
+    margin-left: -30px;
+}
+
+/* phần hero: (Slogan + text + get started) */
+.hero {
+    padding: 100px 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* sang trái nhẹ */
+}
+
+.slogan {
+    font-size: 46px;
+    font-family: "Baloo Thambi 2", sans-serif;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-top: -30px;
+    font-size: 18px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    margin-left: 130px;
+}
+
+.btn {
+    margin-top: 40px;
+    margin-left: 240px;
+
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+    font-family: "Baloo Thambi 2", sans-serif;
+    font-weight: 700;
+
+    background-color: #12D272;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}          
+
+.hero {
+    height: 100vh;   /* chiếm full màn hình */
+    display: flex;
+    flex-direction: column;
+}
+
+                            /* ABOUT */
+
+.ellipse4 {
+    background-color: #5118A7;
+    height: 186px;
+    width: 772px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    z-index: -1;
+}
+
+.ellipse5 {
+    background-color: #010165;
+    height: 285px;
+    width: 306px;
+    border-radius: 50%;
+
+    filter: blur(100px); 
+
+    position: absolute;
+    top: 1450px;
+    right: -90px;
+    z-index: -1;
+}
+
+#about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 100px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 48px;      
+    font-weight: bold;   
+    font-family: "Poppins", Arial;  
+}
+
+/* xếp 3 block thành cột và cách 30 px */
+.about-blocks {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3 block xài chung 1 kiểu design box, text,.. */
+.about-block {
+    background: rgba(30, 2, 59, 0.5);
+    border-radius: 15px;     
+
+    text-align: left; 
+    padding: 10px 40px;           
+    
+    font-family: "Poppins", Arial; 
+    font-size: 18px; 
+}
+
+/* chỉnh từng block riêng */
+.about-block:nth-child(1) {
+    width: 480px;
+    align-self: flex-start; 
+    transform: translateX(-320px);
+}
+
+.about-block:nth-child(2) {
+    width: 430px;
+    align-self: flex-start; 
+    transform: translateX(320px);
+}
+
+.about-block:nth-child(3) {
+    width: 380px;
+    align-self: flex-start; 
+    transform: translateX(-320px);
+}
+
+                            /* PRICING */
+
+.ellipse6 {
+    background-color: #010165;
+    height: 180px;
+    width: 678px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(24.52deg);
+    top: 250px;
+    left: -100px;
+    z-index: -1;
+}
+.ellipse7 {
+    background-color: #190165;
+    height: 260px;
+    width: 475px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(6.3deg);
+    top: 520px;
+    left: 680px;
+    z-index: -1;
+}
+.ellipse8 {
+    background-color: #360165;
+    height: 450px;
+    width: 480px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(-3.76deg);
+    top: 250px;
+    right: -180px;
+    z-index: -1;
+}
+/* chung cho chữ + 3 option giá */
+#pricing {
+    padding: 80px 100px;
+    text-align: center;
+    position: relative;  /* mốc cho elip */
+}
+
+#pricing h2 {
+    font-size: 40px;   
+    font-weight: bold;       
+    font-family: "Poppins", Arial;
+    text-transform: uppercase; 
+}
+
+/* xếp 3 option giữa trang và canh chỉnh,... */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 100px;
+}
+
+/* design 3 box và chữ bên trong (chung chung) */
+.price-card {
+    background: rgb(103, 12, 168, 0.22);
+
+    border-radius: 10px;
+    padding: 30px;
+    width: 351px;
+    height: 450px;
+
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* xóa hitbox Basic, pro, premium */
+.price-card h3 {
+    margin: 0; 
+}   
+/* sửa ảnh logo nhỏ */
+.price-card img {
+    width: 50px;
+}
+/* ảnh logo + 3 tên option */
+.card-header {
+    display: flex;
+    align-items: center; /* căn giữa theo chiều dọc */
+    gap: 10px;           
+    margin-bottom: 10px;
+
+    font-family: "Poppins", Arial;
+    font-size: 30px;
+}
+
+/*  design các mô tả */
+.plan-desc {
+    font-family: "Poppins", Arial;
+    font-size: 13px;
+    opacity: 0.67;
+}
+/* giá + month */
+.price {
+    font-size: 48px;
+    font-family: "Poppins", Arial;
+    font-weight: bold;
+}
+.month {
+    font-size: 14px; 
+    opacity: 0.44;  
+}
+
+/* Features */
+.features-title {
+    font-family: "Poppins", Arial;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* tick + các tính năng */
+.price-card ul {
+    font-family: "Poppins", Arial;
+    font-size: 15px;
+    opacity: 0.69;
+    padding-left: 0px;
+    list-style: none;
+}
+.tick {
+    margin-right: 10px; /* đẩy xa chữ */
+    opacity: 0.69;
+    font-size: 15px;
+}
+
+/* khoảng cách các features */
+.price-card li {
+    margin-bottom: 10px; /* khoảng cách giữa các dòng */
+}
+
+                            /* SUPPORT */
+/* chung cho contact us + email, name, message, button */
+#support {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+
+    padding: 80px 20px;
+    text-align: center;
+    scroll-margin-top: -100px;
+
+    position: relative; /* mốc cho elip */
+}
+
+/* contact us */
+#support h2 {
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "Poppins", Arial;
+
+    text-transform: uppercase;
+}
+
+.ellipse9 {
+    background-color: #360165;
+    height: 400px;
+    width: 380px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(-3.76deg);
+    top: 350px;
+    left: -100px;
+    z-index: -1;
+}
+.ellipse10 {
+    background-color: #4E415A;
+    height: 270px;
+    width: 540px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(0deg);
+    top: 380px;
+    left: 580px;
+    z-index: -1;
+}
+.ellipse11 {
+    background-color: #240F5D;
+    height: 530px;
+    width: 330px;
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    position: absolute;
+    transform: rotate(32deg);
+    bottom: 1;
+    right: 0;
+    z-index: -1;
+}
+
+/* sub title */
+.contact-subtitle {
+    margin-top: -20px;
+    font-size: 20px;
+    font-family: "Poppins", Arial;
+    opacity: 0.8;
+}
+
+/* 3 box */
+.contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+/* chữ trong box và box */
+.contact-form input,
+.contact-form textarea {
+    resize: none; 
+
+    padding: 12px 15px;
+
+    border-radius: 12px; 
+    border: none;
+
+    background: rgba(66,3,111,0.32); 
+
+    color: aliceblue;
+
+    font-family: "Poppins", Arial;
+    font-size: 20px;
+    width: 600px;
+}
+
+/* button */
+.contact-form button {
+    color: white;
+    font-family: "Baloo Thambi 2", sans-serif;
+    font-size: 32px; 
+    font-weight: bold;
+
+    background: rgb(29, 20, 153, 0.22);
+    width: 250px;
+    margin: 0 auto;
+    border: none; 
+    
+    cursor: pointer;
+}

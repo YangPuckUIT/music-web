@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow: hidden; /* khóa màn */
+
+  background-color: #000018;
+}
+
+.ellipse1 {
+  background-color: #010165;
+  height: 280px;
+  width: 550px;
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  position: absolute;
+  top: 120px;
+  left: -163px;
+  transform: rotate(0deg);
+  z-index: -1;
+}
+.ellipse2 {
+  background-color: #290165;
+  height: 412px;
+  width: 482px;
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  position: absolute;
+  bottom: -150px;
+  right: 600px;
+  transform: rotate(0deg);
+  z-index: -1;
+    
+  transition: 0.6s ease;
+}
+.ellipse3 {
+  background-color: #290165;
+  height: 412px;
+  width: 482px;
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  position: absolute;
+  bottom: 100px;
+  right: 350px;
+  transform: rotate(0deg);
+  z-index: -1;
+}
+.ellipse4 {
+  background-color: #290165;
+  height: 412px;
+  width: 482px;
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  position: absolute;
+  top: 50px;
+  right: 450px;
+  transform: rotate(0deg);
+  z-index: -1;
+
+  transition: 0.6s ease;
+}
+.ellipse5 {
+  background-color: #441271;
+  height: 317px;
+  width: 498px;
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  position: absolute;
+  top: -60px;
+  right: -160px;
+  transform: rotate(0deg);
+  z-index: -1;
+}
+
+/* nhóm circle */
+.circle-group {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) translateX(180px) translateY(10px);
+
+  transition: 0.6s ease;
+}
+/* style chung */
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+/* lớn */
+.big {
+  width: 630px;
+  height: 630px;
+  background: #000000;
+}
+/* vừa */
+.medium {
+  width: 135px;
+  height: 135px;
+  background: #D9D9D9;
+}
+/* nhỏ */
+.small {
+  width: 10px;
+  height: 10px;
+  background: #000000;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;     /* căn giữa dọc */
+  justify-content: center; /* ban đầu giữa ngang */
+}
+
+.box {
+  width: 650px;
+  height: 650px;
+  background: #250031;
+  
+  display: flex;
+  justify-content: center;
+
+  transform: translateX(-200px); /* đẩy sang trái */
+
+  box-shadow: 4px 4px 37.5px rgba(217, 0, 255, 0.25);
+
+  transition: 1s ease;
+}
+
+/* login + 2 box */
+.wrapper {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+/* login */
+.wrapper h1 {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  font-size: 52px;
+  font-family: "Poppins", Arial, sans-serif;
+
+  /* màu font */
+  background: linear-gradient(to bottom, #AE7CE7, #432D48);
+  -webkit-background-clip: text;           /*Chrome, Edge*/
+  background-clip: text;                   /*chuẩn chung (Firefox, future)*/
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2 box */
+.input-box {
+  margin-bottom: 90px;
+  position: relative;
+}
+/* design 2 box khi đang và đã nhập */
+.input-box input {
+  width: 85%;
+  padding: 2px 0px;
+
+  /* edit lại box */
+  border: 1px solid #ffffff;
+  border: none;                /*  bỏ viền */
+  border-bottom: 2px solid #ccc; /* chỉ giữ gạch dưới */
+  background: transparent;     /* nền trong suốt */
+  outline: none;
+
+  /* style chữ nhập của user */
+  font-size: 24px;
+  font-family: "Poppins", Arial, sans-serif;
+  letter-spacing: -1px;
+  color: #c491f5;
+
+  transition: 0.3s;
+}
+/* style chữ email + pasword */
+.input-box label {
+  position: absolute;
+  left: 46px;
+  top: 0px;
+/* design label khi chưa ấn */
+  font-size: 24px;
+  font-family: "Baloo Thambi 2", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+
+  pointer-events: none; /* không bị click vào label */
+  transition: 0.3s; /* thời gian label animated khi ấn vào */
+}
+/* animation */
+/* ko bt sao vẫn chạy đc nhưng nam mô đừng đụng vào nữa :(( */
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #AE7CE7;
+}
+
+/* effect: di chuột + click*/
+/* hover */
+.input-box input:hover {
+  border-bottom: 2px solid #AE7CE7;
+}
+.input-box input:hover + label {
+  color: #AE7CE7;
+}
+
+/* focus */
+.input-box input:focus {
+  border-bottom: 2px solid #8400ff;
+}
+.input-box input:focus + label {
+  color: #8400ff;
+}
+
+/* nút Login */
+.btn {
+  transform: translateY(-30px);
+  width: 85%;             
+  padding: 10px;           
+
+  background: linear-gradient(to bottom, #D9D9D9, #737373); 
+  color: white;           
+
+  border: none;
+  border-radius: 50px;
+
+  cursor: pointer;
+}
+/* chữ login (trong nút) */
+.btn span {
+  background: linear-gradient(to bottom, #040404, #786390);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 26px;        
+  font-weight: bold;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* effect btn */
+
+/* di chuột */
+.btn:hover {
+  background: linear-gradient(to bottom, #e6e6e6, #8a8a8a);
+}
+.btn:hover span {
+  filter: brightness(1.5); /* chữ sáng nhẹ */
+}
+/* ấn */
+.btn:active {
+  background: linear-gradient(to bottom, #c0c0c0, #5a5a5a);
+}
+.btn:active span {
+  filter: brightness(0.9); /* chữ tối nhẹ */
+}
+
+/* 2 link */
+.links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 180px;               
+}
+.links button {
+  background: none;
+  border: none;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Poppins", Arial, sans-serif;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+.links button:hover {
+  color: #AE7CE7;
+}
+
+/* ẩn sign up khi có login */
+.signup-form {
+  display: none;
+}
+
+                      /* sửa các đặc điểm khisang sign up ellip 1 và 5 giữa nguyên */
+body.active .box {
+  transform: translateX(200px);
+}
+
+body.active .circle-group {
+  transform: translate(-50%, -50%) translateX(-170px) translateY(10px);
+}
+
+/* canh chỉnh k/c 3 box + nút sign un + Already have an account */
+body.active .input-box {
+  margin-bottom: 70px; 
+}
+body.active .btn {
+  margin-top: 30px
+}
+body.active .links {
+  margin-top: -5px;
+}
+
+/* đổi ellip */
+body.active .ellipse2 {
+  right: 650px;
+  bottom: 60px;
+}
+body.active .ellipse4 {
+  right: 700px;
+  top: 50px;
+}

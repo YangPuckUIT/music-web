@@ -1,0 +1,299 @@
+/* animation */
+
+/* màu background */
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 4 ảnh bocchi */
+@keyframes spin1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes spin3 {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes spin4 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+/* chữ money pls */
+@keyframes blinkAnim {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* chữ xin hãy ủng hộ,... */
+@keyframes changeColor {
+    0%   { color: red; }
+    25%  { color: blue; }
+    50%  { color: black; }
+    75%  { color: green; }
+    100% { color: yellow; }
+}
+/* chữ btw... */
+@keyframes blueRed {
+    0% { color: blue; }
+    100% { clolor: red; }
+}
+/* ảnh nhỏ gần money pls */
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(0); }
+}
+/* yui */
+@keyframes jello {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+}
+@keyframes swing {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes shakeMini {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 1px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes rubberBand {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* object */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: bold;
+
+    background: linear-gradient(
+    -45deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #8b00ff
+  );
+
+  background-size: 400% 400%;
+  animation: rainbowMove 6s ease infinite;
+}
+
+.checkout-container {
+
+    position: relative; /* mốc cho ảnh */
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center; /* dọc */
+    align-items: center;     /* ngang */
+
+    text-align: center;
+}
+.checkout-container h1 {
+    font-size: 50px;
+    color:  #ff0000;
+    margin-bottom: 10px;
+    animation: blinkAnim 0.5s infinite;
+}
+.subtext1 {
+    font-size: 18px;
+    margin-bottom: -5px;
+    animation: changeColor 1s infinite;
+}
+.subtext2 {
+    font-size: 14px;
+    opacity: 1;
+    margin-bottom: 30px;
+    animation: blinkAnim 1s infinite;
+}
+/* ảnh qr */
+.checkout-container img {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* ảnh khóc */
+.img1 {
+    width: 200px;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    animation: spin1 1s linear infinite;
+}
+
+.img2 {
+    width: 200px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    animation: spin2 1s linear infinite;
+}
+.img3 {
+    width: 200px;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    animation: spin3 1s linear infinite;
+}
+.img4 {
+    width: 200px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    animation: spin4 1s linear infinite;
+}
+
+.img5 {
+    width: 200px;
+    border-radius: 50px;
+    transform: rotate(20deg);
+
+    position: absolute;
+    top: 300px;
+    right: 440px;
+    z-index: -1;
+  animation: rubberBand 1s infinite;
+}
+.img6 {
+    width: 200px;
+    border-radius: 30px;
+    transform: rotate(-10deg);
+
+    position: absolute;
+    bottom: 30px;
+    left: 440px;
+    z-index: -1;
+    animation: swing 1.5s ease-in-out infinite;
+}
+.img7 {
+    width: 200px;
+    border-radius: 10px;
+
+    position: absolute;
+    bottom: -20px;
+    right: 400px;
+    z-index: -1;
+    animation: jello 2s infinite;
+}
+.img8 {
+    width: 100px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 10px;
+    left: 550px;
+    z-index: -1;
+
+    animation: vibrate 0.2s infinite;
+}
