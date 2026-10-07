@@ -178,12 +178,6 @@ a {
 }
 
 /* phần hero: (Slogan + text + get started) */
-.hero {
-    padding: 100px 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* sang trái nhẹ */
-}
 
 .slogan {
     font-size: 46px;
@@ -213,13 +207,16 @@ a {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-}          
+}
 
 .hero {
+    padding: 100px 180px;
     height: 100vh;   /* chiếm full màn hình */
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* sang trái nhẹ */
 }
+
 
                             /* ABOUT */
 
