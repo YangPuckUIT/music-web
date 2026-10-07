@@ -3,17 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Login | Hibike! Music</title>
+    <link rel="icon" href="assets/logos/httFavicon.jpg" />
 
     <link rel="stylesheet" href="css/login.css" />
-    <!-- poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
+    <!-- Poppins + Baloo Thambi 2 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,59 +30,205 @@
       </div>
     </div>
 
+    <a href="index.html" class="home-link">&larr; Hibike! Music</a>
+
     <div class="container">
       <div class="box">
         <div class="wrapper">
           <!-- LOGIN -->
-          <form class="form login-form">
+          <form class="form login-form is-active" novalidate>
             <h1>Login</h1>
 
             <div class="input-box">
-              <input type="email" placeholder=" " required />
-              <label>Email</label>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                placeholder=" "
+                autocomplete="email"
+                required
+              />
+              <label for="login-email">Email</label>
             </div>
 
-            <div class="input-box">
-              <input type="password" placeholder=" " required />
-              <label>Password</label>
+            <div class="input-box has-toggle">
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                placeholder=" "
+                autocomplete="current-password"
+                required
+              />
+              <label for="login-password">Password</label>
+              <button type="button" class="toggle-pw" aria-label="Show password">Show</button>
             </div>
+
+            <p class="form-msg" role="alert" aria-live="polite"></p>
 
             <button type="submit" class="btn">
               <span>Login</span>
             </button>
 
             <div class="links">
-              <button class="create">Create an account</button>
-              <button class="forgot">Forgot password?</button>
+              <button type="button" class="create">Create an account</button>
+              <button type="button" class="forgot">Forgot password?</button>
             </div>
           </form>
+
           <!-- SIGN UP -->
-          <form class="form signup-form">
+          <form class="form signup-form" novalidate>
             <h1>Sign Up</h1>
 
             <div class="input-box">
-              <input type="email" placeholder=" " required />
-              <label>Email</label>
+              <input
+                type="email"
+                id="signup-email"
+                name="email"
+                placeholder=" "
+                autocomplete="email"
+                required
+              />
+              <label for="signup-email">Email</label>
             </div>
 
-            <div class="input-box">
-              <input type="password" placeholder=" " required />
-              <label>Password</label>
+            <div class="input-box has-toggle">
+              <input
+                type="password"
+                id="signup-password"
+                name="password"
+                placeholder=" "
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+              <label for="signup-password">Password</label>
+              <button type="button" class="toggle-pw" aria-label="Show password">Show</button>
             </div>
 
-            <div class="input-box">
-              <input type="password" placeholder=" " required />
-              <label>Confirm Password</label>
+            <div class="input-box has-toggle">
+              <input
+                type="password"
+                id="signup-confirm"
+                name="confirm"
+                placeholder=" "
+                autocomplete="new-password"
+                required
+              />
+              <label for="signup-confirm">Confirm Password</label>
+              <button type="button" class="toggle-pw" aria-label="Show password">Show</button>
             </div>
+
+            <p class="form-msg" role="alert" aria-live="polite"></p>
 
             <button type="submit" class="btn">
               <span>Sign Up</span>
             </button>
 
             <div class="links">
-              <button type="button" class="back">
-                Already have an account
-              </button>
+              <button type="button" class="back">Already have an account</button>
+            </div>
+          </form>
+
+          <!-- FORGOT PASSWORD - bước 1: nhập email -->
+          <form class="form forgot-form" novalidate>
+            <h1>Forgot Password</h1>
+            <p class="hint">
+              Enter the email you signed up with and we'll send you a 6-digit
+              code to reset your password.
+            </p>
+
+            <div class="input-box">
+              <input
+                type="email"
+                id="forgot-email"
+                name="email"
+                placeholder=" "
+                autocomplete="email"
+                required
+              />
+              <label for="forgot-email">Email</label>
+            </div>
+
+            <p class="form-msg" role="alert" aria-live="polite"></p>
+
+            <button type="submit" class="btn">
+              <span>Send code</span>
+            </button>
+
+            <div class="links">
+              <button type="button" class="back">Back to login</button>
+            </div>
+          </form>
+
+          <!-- FORGOT PASSWORD - bước 2: nhập OTP -->
+          <form class="form otp-form" novalidate>
+            <h1>Enter Code</h1>
+            <p class="hint">
+              We sent a 6-digit code to <strong id="otp-email"></strong>.
+              It may take a minute to arrive.
+            </p>
+
+            <div class="otp-row" role="group" aria-label="6-digit code">
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1" />
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2" />
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3" />
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4" />
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5" />
+              <input class="otp-input" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6" />
+            </div>
+
+            <p class="form-msg" role="alert" aria-live="polite"></p>
+
+            <button type="submit" class="btn">
+              <span>Verify</span>
+            </button>
+
+            <div class="links">
+              <button type="button" class="resend">Resend code</button>
+              <button type="button" class="change-email">Change email</button>
+            </div>
+          </form>
+
+          <!-- FORGOT PASSWORD - bước 3: mật khẩu mới -->
+          <form class="form reset-form" novalidate>
+            <h1>New Password</h1>
+
+            <div class="input-box has-toggle">
+              <input
+                type="password"
+                id="reset-password"
+                name="password"
+                placeholder=" "
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+              <label for="reset-password">New Password</label>
+              <button type="button" class="toggle-pw" aria-label="Show password">Show</button>
+            </div>
+
+            <div class="input-box has-toggle">
+              <input
+                type="password"
+                id="reset-confirm"
+                name="confirm"
+                placeholder=" "
+                autocomplete="new-password"
+                required
+              />
+              <label for="reset-confirm">Confirm Password</label>
+              <button type="button" class="toggle-pw" aria-label="Show password">Show</button>
+            </div>
+
+            <p class="form-msg" role="alert" aria-live="polite"></p>
+
+            <button type="submit" class="btn">
+              <span>Reset password</span>
+            </button>
+
+            <div class="links">
+              <button type="button" class="back">Back to login</button>
             </div>
           </form>
         </div>

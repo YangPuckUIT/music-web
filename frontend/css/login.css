@@ -166,16 +166,17 @@ body {
 
 /* 2 box */
 .input-box {
-  margin-bottom: 90px;
+  width: 85%;
+  margin: 0 auto 90px;
   position: relative;
 }
 /* design 2 box khi đang và đã nhập */
 .input-box input {
-  width: 85%;
+  width: 100%;
+  box-sizing: border-box;
   padding: 2px 0px;
 
   /* edit lại box */
-  border: 1px solid #ffffff;
   border: none;                /*  bỏ viền */
   border-bottom: 2px solid #ccc; /* chỉ giữ gạch dưới */
   background: transparent;     /* nền trong suốt */
@@ -192,7 +193,7 @@ body {
 /* style chữ email + pasword */
 .input-box label {
   position: absolute;
-  left: 46px;
+  left: 0;
   top: 0px;
 /* design label khi chưa ấn */
   font-size: 24px;
@@ -296,9 +297,12 @@ body {
   color: #AE7CE7;
 }
 
-/* ẩn sign up khi có login */
-.signup-form {
+/* chỉ hiện form đang active (login / sign up / forgot) */
+.form {
   display: none;
+}
+.form.is-active {
+  display: block;
 }
 
                       /* sửa các đặc điểm khisang sign up ellip 1 và 5 giữa nguyên */
@@ -329,4 +333,266 @@ body.active .ellipse2 {
 body.active .ellipse4 {
   right: 700px;
   top: 50px;
+}
+
+/* ============================================================
+   THÊM MỚI: forgot password, thông báo lỗi, show/hide password...
+   Màu + font lấy từ trang chủ: #AE7CE7 / #8400ff / #BEBABA / #12D272,
+   Poppins (chữ), Baloo Thambi 2 (label)
+   ============================================================ */
+
+/* link về trang chủ */
+.home-link {
+  position: fixed;
+  top: 24px;
+  left: 28px;
+  z-index: 5;
+
+  color: #ffffff;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.home-link:hover {
+  color: #AE7CE7;
+}
+
+/* nút Show / Hide password */
+.has-toggle input {
+  padding-right: 52px;
+}
+.toggle-pw {
+  position: absolute;
+  right: 0;
+  top: 4px;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  color: #BEBABA;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toggle-pw:hover {
+  color: #AE7CE7;
+}
+
+/* thông báo dưới ô nhập (lỗi / thành công / demo) */
+.form-msg {
+  min-height: 22px;
+  width: 85%;
+  margin: -60px auto 40px;
+
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: transparent;
+}
+.form-msg.error {
+  color: #ff6b8a;
+}
+.form-msg.success {
+  color: #12D272;
+}
+.form-msg.info {
+  color: #BEBABA;
+}
+body.active .form-msg {
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+/* nút bị khóa (đang gửi / đang chờ resend) */
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* focus bằng bàn phím */
+.links button:focus-visible,
+.toggle-pw:focus-visible,
+.home-link:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #AE7CE7;
+  outline-offset: 3px;
+}
+
+/* ---------- Forgot password ---------- */
+.forgot-form h1,
+.otp-form h1 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+.hint {
+  width: 80%;
+  margin: 0 auto 70px;
+
+  color: #BEBABA;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.forgot-form .form-msg,
+.otp-form .form-msg {
+  margin-top: -40px;
+  margin-bottom: 70px; /* chừa chỗ cho thông báo 2 dòng, nút bị kéo lên 30px */
+}
+
+/* ---------- Màn hình nhỏ (tablet / điện thoại) ---------- */
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+  .circle-group {
+    display: none;
+  }
+  .container {
+    min-height: 100vh;
+    height: auto;
+    padding: 70px 16px 30px;
+    box-sizing: border-box;
+  }
+  .box,
+  body.active .box {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    transform: none;
+  }
+  .wrapper {
+    padding: 24px 16px;
+    box-sizing: border-box;
+  }
+  .wrapper h1,
+  .forgot-form h1,
+.otp-form h1 {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+  .forgot-form h1,
+.otp-form h1 {
+    margin-bottom: 16px;
+  }
+  .input-box,
+  body.active .input-box {
+    margin-bottom: 44px;
+  }
+  .input-box label {
+    font-size: 20px;
+  }
+  .input-box input {
+    font-size: 20px;
+  }
+  .form-msg,
+  body.active .form-msg,
+  .forgot-form .form-msg,
+.otp-form .form-msg {
+    margin-top: -20px;
+    margin-bottom: 24px;
+  }
+  .forgot-form .form-msg,
+.otp-form .form-msg {
+    margin-bottom: 24px;
+  }
+  .hint {
+    width: 90%;
+    margin-bottom: 44px;
+  }
+  .btn,
+  body.active .btn {
+    transform: none;
+    margin-top: 0;
+  }
+  .btn span {
+    font-size: 22px;
+  }
+  .links,
+  body.active .links {
+    margin-top: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .links button {
+    font-size: 14px;
+  }
+}
+
+/* ---------- OTP 6 ô ---------- */
+.otp-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 70px;
+}
+.otp-input {
+  width: 52px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 0;
+
+  background: transparent;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+
+  text-align: center;
+  font-size: 28px;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #c491f5;
+  caret-color: #AE7CE7;
+
+  transition: 0.3s;
+}
+.otp-input:hover {
+  border-color: #AE7CE7;
+}
+.otp-input:focus {
+  border-color: #8400ff;
+  box-shadow: 0 0 12px rgba(132, 0, 255, 0.45);
+}
+.otp-input.filled {
+  border-color: #AE7CE7;
+}
+.otp-input.error {
+  border-color: #ff6b8a;
+  animation: otp-shake 0.35s;
+}
+@keyframes otp-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.hint strong {
+  color: #AE7CE7;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* link bị khóa (đang đếm ngược resend) */
+.links button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.links button:disabled:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .otp-row {
+    gap: 8px;
+    margin-bottom: 44px;
+  }
+  .otp-input {
+    width: 42px;
+    height: 54px;
+    font-size: 22px;
+  }
 }
